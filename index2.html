@@ -1,0 +1,128 @@
+<h1>ESP32 Conroller</h1>
+<form id="inputForm" action="/" method="get" onsubmit="return onFormSubmit(this)">
+  <div>
+    Server Address: <input id="serverAddress" type="text" name="serverAddress" value="0.0.0.0">
+  </div>
+  <div class="range-line all-colors">
+      <div class="range-group">
+        <label class="switch">
+          <input type="checkbox" name="allOn" onchange="onSliderChange(this)" class="switch-checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="range-group" style="vertical-align: top;">
+        <div style="margin-top: 0.4em;">All Colors</div>
+      </div>
+  </div>
+
+  <div class="range-line red">
+      <div class="range-group">
+        <label class="switch">
+          <input type="checkbox" name="redOn" onchange="onSliderChange(this)" class="switch-checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="range-group">
+        <div>Current</div>
+        <div>0<input name="redCurrent" type="range" min="0" max="4095" value="0" oninput="updateValue(this)" class="range-input">4095</div>
+        <div><input id="valueOf-redCurrent" value="0" readonly class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Bias Ch1</div>
+        <div>0<input name="redBias1" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div><input id="valueOf-redBias1" value="0" readonly class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Bias Ch2</div>
+        <div>0<input name="redBias2" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div><input id="valueOf-redBias2" value="0" readonly class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Bias Ch3</div>
+        <div>0<input name="redBias3" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div><input id="valueOf-redBias3" value="0" readonly class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Bias Ch4</div>
+        <div>0<input name="redBias4" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div><input id="valueOf-redBias4" value="0" readonly class="range-output"></div>
+      </div>
+  </div>
+
+
+  <div class="range-line green">
+      <div class="range-group">
+        <label class="switch">
+          <input type="checkbox" name="greenOn" onchange="onSliderChange(this)" class="switch-checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="range-group">
+        <div>Current</div>
+        <div>0<input name="greenCurrent" type="range" min="0" max="4095" value="0" oninput="updateValue(this)" class="range-input">4095</div>
+        <div><input id="valueOf-greenCurrent" value="0" readonly class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Bias Ch1</div>
+        <div>0<input name="greenBias1" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div><input id="valueOf-greenBias1" value="0" readonly class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Bias Ch2</div>
+        <div>0<input name="greenBias2" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div><input id="valueOf-greenBias2" value="0" readonly class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Bias Ch3</div>
+        <div>0<input name="greenBias3" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div><input id="valueOf-greenBias3" value="0" readonly class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Bias Ch4</div>
+        <div>0<input name="greenBias4" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div><input id="valueOf-greenBias4" value="0" readonly class="range-output"></div>
+      </div>
+  </div>
+  
+  
+  <div class="range-line blue">
+      <div class="range-group">
+        <label class="switch">
+          <input type="checkbox" name="blueOn" onchange="onSliderChange(this)" class="switch-checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="range-group">
+        <div>Current</div>
+        <div>0<input name="blueCurrent" type="range" min="0" max="4095" value="0" oninput="updateValue(this)" class="range-input">4095</div>
+        <div><input id="valueOf-blueCurrent" value="0" readonly class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Bias Ch1</div>
+        <div>0<input name="blueBias1" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div><input id="valueOf-blueBias1" value="0" readonly class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Bias Ch2</div>
+        <div>0<input name="blueBias2" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div><input id="valueOf-blueBias2" value="0" readonly class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Bias Ch3</div>
+        <div>0<input name="blueBias3" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div><input id="valueOf-blueBias3" value="0" readonly class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Bias Ch4</div>
+        <div>0<input name="blueBias4" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div><input id="valueOf-blueBias4" value="0" readonly class="range-output"></div>
+      </div>
+  </div>
+  <input type="submit">
+  <input type="button" onclick="saveData()" value="Save">
+
+  <label class="checkmark-container">Auto-save on Submit
+    <input id="autosave" type="checkbox" name="autosave">
+    <span class="checkmark"></span>
+  </label>
+</form>
