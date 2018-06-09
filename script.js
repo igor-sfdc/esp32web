@@ -95,7 +95,5 @@
                     }
                 }
             }
-		    }
+	}
     }
-    
-    if(loadData) loadData();
