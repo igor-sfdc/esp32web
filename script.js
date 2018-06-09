@@ -5,7 +5,9 @@
     function updateValue(control) {
         var valueId = "valueOf-" + control.name;
         var valueOutput = document.getElementById(valueId);
-        valueOutput.value = control.value;
+        if (valueOutput) {
+            valueOutput.value = control.value;
+        }
     }
     
     // https://stackoverflow.com/a/11187738
@@ -164,7 +166,8 @@
                         element.checked = value === "on";
                     } else {
                     	element.value = value;
-                    }
+                        updateValue(element);
+		    }
                 }
             }
         }
