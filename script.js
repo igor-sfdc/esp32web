@@ -144,7 +144,9 @@
 
     function syncWithDevice() {
         console.log("updating form using device data");
-        var searchParams = new URL(window.location).searchParams
+        var deviceState = document.getElementById("deviceState");
+        var searchParamsStr = deviceState ? deviceState.innerText : "";
+        var searchParams = new URL("http://host.com" + searchParamsStr).searchParams;
         var form = document.getElementById("inputForm");
         var elements = form.elements;
 
@@ -197,6 +199,13 @@
             }
         }
 
+        // This will override the data saved in the browser with the data saved in the device
+        var autosync = document.getElementById("autosync");
+        console.log("autosync enabled loading data from the device: " + autosync.checked);
+        if (autosync && autosync.checked) {
+            syncWithDevice();
+        }
+        
         // This will initialize server address to origin if necessary
         getServerAddress();
 
