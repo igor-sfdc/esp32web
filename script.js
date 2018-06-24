@@ -142,6 +142,31 @@
         console.log('savedEntries: ', savedEntries);
     }
 
+    function syncWithDevice() {
+        console.log("updating form using device data");
+        var searchParams = new URL(window.location).searchParams
+        var form = document.getElementById("inputForm");
+        var elements = form.elements;
+
+        var numElements = elements.length;
+        for (idx=0; idx < numElements; idx++) {
+            var element = elements[idx];
+            var name = element.name;
+            if(name) {
+                var value = searchParams.get(name)
+                if (value) {
+                    console.log("loaded device value: " + value + " for for field: " + name);
+                    if(element.type === "checkbox") {
+                        element.checked = value === "on";
+                    } else {
+                        element.value = value;
+                        updateValue(element);
+                    }
+                }
+            }
+        }
+    }
+
     function loadData() {
         var savedEntriesString = localStorage.getItem("savedEntries");
         if (!savedEntriesString) {
