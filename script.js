@@ -62,7 +62,7 @@
         commandPath += paddedValue(retrieved, "gainCh4");
 
         commandPath += "~";
-        paddedValue(retrieved, "timerUs");
+        commandPath += paddedValue(retrieved, "timerUs");
 
         commandPath += "~";
         commandPath += retrieved["resumeSuspend"] === "on" ? "resume" : "suspend";
