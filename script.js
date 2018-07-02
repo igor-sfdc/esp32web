@@ -44,16 +44,22 @@
         commandPath += "red-" + paddedValue(retrieved, "redCurrent");
         commandPath += paddedValue(retrieved, "redBias1");
         commandPath += paddedValue(retrieved, "redBias2");
+        commandPath += paddedValue(retrieved, "redBias3");
+        commandPath += paddedValue(retrieved, "redBias4");
 
         commandPath += "~";
         commandPath += "green-" + paddedValue(retrieved, "greenCurrent");
         commandPath += paddedValue(retrieved, "greenBias1");
         commandPath += paddedValue(retrieved, "greenBias2");
+        commandPath += paddedValue(retrieved, "greenBias3");
+        commandPath += paddedValue(retrieved, "greenBias4");
 
         commandPath += "~";
         commandPath += "blue-" + paddedValue(retrieved, "blueCurrent");
         commandPath += paddedValue(retrieved, "blueBias1");
         commandPath += paddedValue(retrieved, "blueBias2");
+        commandPath += paddedValue(retrieved, "blueBias3");
+        commandPath += paddedValue(retrieved, "blueBias4");
 
         commandPath += "~";
         commandPath += "gain-" + paddedValue(retrieved, "gainCh1");
