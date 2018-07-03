@@ -74,7 +74,8 @@
         commandPath += retrieved["resumeSuspend"] === "on" ? "resume" : "suspend";
 
         commandPath += "~";
-        commandPath += "autoAdjust-" + retrieved["autoAdjust"] === "on" ? "1" : "0";
+        commandPath += "autoAdjust-";
+        commandPath += retrieved["autoAdjust"] === "on" ? "1" : "0";
 
         if (retrieved["redOn"] === "on") {
             commandPath += "~";
