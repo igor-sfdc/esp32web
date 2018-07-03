@@ -23,6 +23,15 @@
         <div id="resumeSuspendLabel" style="margin-top: 0.4em;">Resumed</div>
       </div>
       <div class="range-group">
+        <label class="switch">
+          <input type="checkbox" id="autoAdjust" name="autoAdjust" class="auto-adjust-checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="range-group" style="vertical-align: top;">
+        <div id="autoAdjustLabel" style="margin-top: 0.4em;">Auto-adjust</div>
+      </div>
+      <div class="range-group">
         <div>Timer Period, us</div>
         <div>1000<input name="timerUs" type="range" min="1000" max="5000" value="1000" step="1000" oninput="updateValue(this)" class="range-input">5000</div>
         <div><input id="valueOf-timerUs" value="0" readonly class="range-output"></div>
