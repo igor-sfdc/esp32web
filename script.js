@@ -71,6 +71,11 @@
         commandPath += "timerUs-" + paddedValue(retrieved, "timerUs");
 
         commandPath += "~";
+        commandPath += "averageOverReadings-" + retrieved["averageOverReadings"];
+        commandPath += "~";
+        commandPath += "ledMgmtDelayUs-" + paddedValue(retrieved, "ledMgmtDelayUs");
+
+        commandPath += "~";
         commandPath += retrieved["resumeSuspend"] === "on" ? "resume" : "suspend";
 
         commandPath += "~";
