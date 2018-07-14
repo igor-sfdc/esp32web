@@ -36,6 +36,20 @@
         <div>1000<input name="timerUs" type="range" min="1000" max="5000" value="1000" step="1000" oninput="updateValue(this)" class="range-input">5000</div>
         <div><input id="valueOf-timerUs" value="0" readonly class="range-output"></div>
       </div>
+      <div class="range-group">
+        <div>Average Over Mgmts</div>
+        <div>1<input name="averageOverReadings" type="range" min="1" max="9" value="9" step="1" oninput="updateValue(this)" class="range-input">9</div>
+        <div><input id="valueOf-averageOverReadings" value="1" readonly="" class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Mgmt Delay After LED ON, us</div>
+        <div>1<input name="ledMgmtDelayUs" type="range" min="20" max="100" value="50" step="10" oninput="updateValue(this)" class="range-input">100</div>
+        <div><input id="valueOf-averageOverReadings" value="20" readonly="" class="range-output"></div>
+      </div>
+      <div class="range-group">
+        <div>Time Remainder, us</div>
+        <div><input name="timeRemainderAfterReadingUs" value="10000" readonly="" class="range-output"><br><br></div>
+      </div>
   </div>
 
   <div class="range-line red">
