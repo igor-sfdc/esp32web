@@ -17,9 +17,13 @@
         return s;
     }
 
-    function paddedValue(map, key) {
+    function paddedValue(map, key, numPositions) {
+        // Default to 4 positions
+        if (numPositions === undefined) {
+            numPositions = 4;
+        }
         var value = Number(map[key]);
-        return value.pad(4);
+        return value.pad(numPositions);
     }
 
     function onFormSubmit(form) {
@@ -71,7 +75,7 @@
         commandPath += "timerUs-" + paddedValue(retrieved, "timerUs");
 
         commandPath += "~";
-        commandPath += "averageOverReadings-" + retrieved["averageOverReadings"];
+        commandPath += "averageOverReadings-" + paddedValue(retrieved, "averageOverReadings", 2);
         commandPath += "~";
         commandPath += "ledMgmtDelayUs-" + paddedValue(retrieved, "ledMgmtDelayUs");
 
