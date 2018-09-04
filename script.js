@@ -79,8 +79,8 @@
         commandPath += "~";
         commandPath += "ledMgmtDelayUs-" + paddedValue(retrieved, "ledMgmtDelayUs");
         commandPath += "~";
-        commandPath += "serverIp-" + retrieved["serverIp"];
-        
+        commandPath += "explorerServerIP-" + retrieved["explorerServerIP"];
+
         commandPath += "~";
         commandPath += retrieved["resumeSuspend"] === "on" ? "resume" : "suspend";
 
@@ -119,9 +119,9 @@
 
         var commandLink = document.getElementById("commandLink");
 
-        var serverAddress = getServerAddress();
-        var protocol = serverAddress.startsWith("http") ? "" : "http://";
-        commandLink.href = protocol + serverAddress + commandPath;
+        var esp32ServerIP = getEsp32ServerIP();
+        var protocol = esp32ServerIP.startsWith("http") ? "" : "http://";
+        commandLink.href = protocol + esp32ServerIP + commandPath;
 
         commandLink.click();
 
@@ -198,7 +198,7 @@
         if (!savedEntriesString) {
             console.log("no saved data found");
             // This will initialize server address to origin
-            getServerAddress();
+            getEsp32ServerIP();
             return;
         }
 
@@ -233,18 +233,18 @@
         }
         
         // This will initialize server address to origin if necessary
-        getServerAddress();
+        getEsp32ServerIP();
 
         onResumeSuspendChange(null);
     }
 
-    function getServerAddress() {
-        var serverAddressElement = document.getElementById("serverAddress");
-        var serverAddress = serverAddressElement.value.trim();
-        if(serverAddress.length == 0 || serverAddress.startsWith("0.")) {
-            serverAddressElement.value = window.location.origin;
-            return serverAddressElement.value;
+    function getEsp32ServerIP() {
+        var esp32ServerIPElement = document.getElementById("esp32ServerIP");
+        var esp32ServerIP = esp32ServerIPElement.value.trim();
+        if(esp32ServerIP.length == 0 || esp32ServerIP.startsWith("0.")) {
+            esp32ServerIPElement.value = window.location.origin;
+            return esp32ServerIPElement.value;
         } else {
-            return serverAddress;
+            return esp32ServerIP;
         }
     }
