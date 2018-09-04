@@ -193,7 +193,7 @@
         }
     }
 
-    function loadData() {       
+    function loadData() {
         var savedEntriesString = localStorage.getItem("savedEntries");
         if (!savedEntriesString) {
             console.log("no saved data found");
