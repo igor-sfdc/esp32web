@@ -78,7 +78,9 @@
         commandPath += "averageOverReadings-" + paddedValue(retrieved, "averageOverReadings", 2);
         commandPath += "~";
         commandPath += "ledMgmtDelayUs-" + paddedValue(retrieved, "ledMgmtDelayUs");
-
+        commandPath += "~";
+        commandPath += "serverIp-" + retrieved["serverIp"];
+        
         commandPath += "~";
         commandPath += retrieved["resumeSuspend"] === "on" ? "resume" : "suspend";
 
@@ -195,6 +197,8 @@
         var savedEntriesString = localStorage.getItem("savedEntries");
         if (!savedEntriesString) {
             console.log("no saved data found");
+            // This will initialize server address to origin
+            getServerAddress();
             return;
         }
 
