@@ -137,7 +137,11 @@ input[type=text] {
     text-align: right;
 }
 
-input[type=text][name=serverAddress] {
+input[type=text][name=esp32ServerIP] {
+    width: 15em;
+}
+
+input[type=text][name=explorerServerIP] {
     width: 15em;
 }
 
