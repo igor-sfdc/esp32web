@@ -69,7 +69,7 @@
       </div>
       <div class="range-group">
         <div>Bias Ch1</div>
-        <div>0<input name="redBias1" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div>0<input name="redBias1" type="range" min="0" max="4095" value="0" oninput="updateValue(this)" class="range-input">4095</div>
         <div><input id="valueOf-redBias1" value="0" readonly class="range-output"></div>
       </div>
       <div class="range-group">
@@ -84,7 +84,7 @@
       </div>
       <div class="range-group">
         <div>Bias Ch4</div>
-        <div>0<input name="redBias4" type="range" min="0" max="1000" value="0" oninput="updateValue(this)" class="range-input">1000</div>
+        <div>0<input name="redBias4" type="range" min="0" max="4095" value="0" oninput="updateValue(this)" class="range-input">4095</div>
         <div><input id="valueOf-redBias4" value="0" readonly class="range-output"></div>
       </div>
   </div>
@@ -164,26 +164,25 @@
       <div class="range-group" style="vertical-align: top;">
         <div style="margin-top: 0.4em;">Second-stage Gain: </div>
       </div>
-
       <div class="range-group">
         <div>Ch 1</div>
-        <div>1<input name="gainCh1" type="range" min="1" max="200" value="1" oninput="updateValue(this)" class="range-input">200</div>
-        <div><input id="valueOf-gainCh1" value="1" readonly class="range-output"></div>
+        <div>1<input name="gainCh1" type="range" min="1" max="200" value="10" oninput="updateValue(this)" class="range-input">200</div>
+        <div><input id="valueOf-gainCh1" value="10" readonly class="range-output"></div>
       </div>
       <div class="range-group">
         <div>Ch 2</div>
-        <div>1<input name="gainCh2" type="range" min="1" max="200" value="1" oninput="updateValue(this)" class="range-input">200</div>
-        <div><input id="valueOf-gainCh2" value="1" readonly class="range-output"></div>
+        <div>1<input name="gainCh2" type="range" min="1" max="200" value="40" oninput="updateValue(this)" class="range-input">200</div>
+        <div><input id="valueOf-gainCh2" value="40" readonly class="range-output"></div>
       </div>
       <div class="range-group">
         <div>Ch 3</div>
-        <div>1<input name="gainCh3" type="range" min="1" max="200" value="1" oninput="updateValue(this)" class="range-input">200</div>
-        <div><input id="valueOf-gainCh3" value="1" readonly class="range-output"></div>
+        <div>1<input name="gainCh3" type="range" min="1" max="200" value="40" oninput="updateValue(this)" class="range-input">200</div>
+        <div><input id="valueOf-gainCh3" value="40" readonly class="range-output"></div>
       </div>
       <div class="range-group">
         <div>Ch 4</div>
-        <div>1<input name="gainCh4" type="range" min="1" max="200" value="1" oninput="updateValue(this)" class="range-input">200</div>
-        <div><input id="valueOf-gainCh4" value="1" readonly class="range-output"></div>
+        <div>1<input name="gainCh4" type="range" min="1" max="200" value="10" oninput="updateValue(this)" class="range-input">200</div>
+        <div><input id="valueOf-gainCh4" value="10" readonly class="range-output"></div>
       </div>
   </div>
 
