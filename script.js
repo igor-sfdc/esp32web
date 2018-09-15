@@ -44,7 +44,8 @@
             saveData();
         }
 
-        var commandPath = "/0__";
+        var commandPath = "/11__"; // Expected 11 commands total
+        
         commandPath += "red-" + paddedValue(retrieved, "redCurrent");
         commandPath += paddedValue(retrieved, "redBias1");
         commandPath += paddedValue(retrieved, "redBias2");
@@ -117,6 +118,12 @@
             commandPath += "allOff";
          }
 
+        clickCommandLink(commandPath);
+
+        return false;
+    }
+
+    function clickCommandLink(commandPath) {
         var commandLink = document.getElementById("commandLink");
 
         var esp32ServerIP = getEsp32ServerIP();
@@ -124,8 +131,6 @@
         commandLink.href = protocol + esp32ServerIP + commandPath;
 
         commandLink.click();
-
-        return false;
     }
 
     function onSliderChange(slider) {
@@ -166,6 +171,7 @@
         console.log('savedEntries: ', savedEntries);
     }
 
+    // Update data displayed on the page to reflect auto-adjustment changes from device
     function syncWithDevice() {
         console.log("updating form using device data");
         var deviceState = document.getElementById("deviceState");
@@ -191,6 +197,13 @@
                 }
             }
         }
+    }
+
+    // Simply "touch" the device URL to bring in current device settings without running any commands
+    function loadDataFromDevice() {
+        var commandPath = "/0__"; // Expected 0 commands total
+        clickCommandLink(commandPath);
+        return false;
     }
 
     function loadData() {
