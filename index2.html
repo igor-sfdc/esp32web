@@ -24,7 +24,7 @@
       <div class="range-group" style="vertical-align: top;">
         <div id="resumeSuspendLabel" style="margin-top: 0.4em;">Resumed</div>
       </div>
-      <div class="range-group">
+      <div class="range-group" title="Select this option to automatically perform sensor calibration after Submit.&#10;&#10;This may take extra 10-30s/">
         <label class="switch">
           <input type="checkbox" id="autoAdjust" name="autoAdjust" class="auto-adjust-checkbox">
           <span class="slider round"></span>
@@ -33,25 +33,28 @@
       <div class="range-group" style="vertical-align: top;">
         <div id="autoAdjustLabel" style="margin-top: 0.4em;">Auto-adjust</div>
       </div>
-      <div class="range-group">
+      <div class="range-group" title="Timer period equal to 1/(sampling frequency)">
         <div>Timer Period, us</div>
         <div>1000<input name="timerUs" type="range" min="1000" max="5000" value="1000" step="1000" oninput="updateValue(this)" class="range-input">5000</div>
-        <div><input id="valueOf-timerUs" value="0" readonly class="range-output"></div>
+        <div><input id="valueOf-timerUs" value="1000" readonly class="range-output"></div>
       </div>
-      <div class="range-group">
+      <div class="range-group" title="Select the number of consecutive readings to average over for each sample.">
         <div>Average Over Mgmts</div>
         <div>1<input name="averageOverReadings" type="range" min="1" max="30" value="9" step="2" oninput="updateValue(this)" class="range-input">30</div>
-        <div><input id="valueOf-averageOverReadings" value="1" readonly="" class="range-output"></div>
+        <div><input id="valueOf-averageOverReadings" value="5" readonly="" class="range-output"></div>
       </div>
-      <div class="range-group">
+      <div class="range-group" title="The delay between the time LED is turned on and the time ADC reading starts.">
         <div>Delay After LED ON, us</div>
         <div>20<input name="ledMgmtDelayUs" type="range" min="20" max="200" value="50" step="10" oninput="updateValue(this)" class="range-input">200</div>
-        <div><input id="valueOf-ledMgmtDelayUs" value="20" readonly="" class="range-output"></div>
+        <div><input id="valueOf-ledMgmtDelayUs" value="50" readonly="" class="range-output"></div>
       </div>
-      <div class="range-group">
+      <div class="range-group" title="Time Remainder shows how much time is left in the sampling window after all readings are done.&#10;&#10;It must be non-negative.&#10;&#10;If this value is negative try:
+ * increasing Time Period
+ * decreasing Average Over Mgmts
+ * decreasing Delay After LED ON">
         <div>Time Remainder,</div>
         <div>us</div>
-        <div><input name="timeRemainderAfterReadingUs" value="10000" readonly="" class="range-output"><br></div>
+        <div><input name="timeRemainderAfterReadingUs" value="" readonly="" class="range-output"><br></div>
       </div>
   </div>
 
@@ -193,14 +196,14 @@
     <span class="checkmark"></span>
   </label>
 
-  <input type="button" onclick="saveData()" value="Save">
+  <input type="button" onclick="saveData()" value="Save" checked>
 
   <label class="checkmark-container">&nbsp; Auto-sync with device &nbsp;
-    <input id="autosync" type="checkbox" name="autosync">
+    <input id="autosync" type="checkbox" name="autosync" checked>
     <span class="checkmark"></span>
   </label>
 
-  <input type="button" onclick="loadDataFromDevice()" value="Sync with device">
+  <input type="button" onclick="loadDataFromDevice()" value="Sync with device" checked>
 
   <div class="invisible">
     <a href="#" id="commandLink">Command Link</a>
