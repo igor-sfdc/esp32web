@@ -84,7 +84,7 @@
         var ipregex = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
         var isValidIPPattern = explorerServerIP.match(ipregex).length === 1;
         if (explorerServerIP === "0.0.0.0" || !isValidIPPattern) {
-            alert("Incorrect Explorer Server Address '" + explorerServerIP + "'. Check your PC IP address and try again.&#10;&#10;Examples of a valid IP address:&#10; 10.0.0.18&#10; 192.168.1.8");
+            alert("Incorrect Explorer Server Address '" + explorerServerIP + "'.\n\nCheck your PC IP address and try again.\n\nExamples of a valid IP address:\n 10.0.0.18\n 192.168.1.8");
             return false;
         }
         commandPath += "explorerServerIP-" + explorerServerIP;
