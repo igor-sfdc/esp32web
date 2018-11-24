@@ -196,14 +196,16 @@
     <span class="checkmark"></span>
   </label>
 
-  <input type="button" onclick="saveData()" value="Save" checked>
+  <input type="button" onclick="saveData()" value="Save">
 
   <label class="checkmark-container">&nbsp; Auto-sync with device &nbsp;
     <input id="autosync" type="checkbox" name="autosync" checked>
     <span class="checkmark"></span>
   </label>
 
-  <input type="button" onclick="loadDataFromDevice()" value="Sync with device" checked>
+  <input type="button" onclick="loadDataFromDevice()" value="Sync with device">
+
+  <input type="button" onclick="clickCommandLink('/1__setTestMode-1')" value="Test mode">
 
   <div class="invisible">
     <a href="#" id="commandLink">Command Link</a>
