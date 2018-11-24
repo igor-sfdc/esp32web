@@ -189,21 +189,23 @@
       </div>
   </div>
 
-  <input type="submit">
+  <input type="submit" title="Click to submit changes">
 
   <label class="checkmark-container">&nbsp; Auto-save on Submit &nbsp;
     <input id="autosave" type="checkbox" name="autosave" checked>
     <span class="checkmark"></span>
   </label>
 
-  <input type="button" onclick="saveData()" value="Save" checked>
+  <input type="button" onclick="saveData()" value="Save">
 
   <label class="checkmark-container">&nbsp; Auto-sync with device &nbsp;
     <input id="autosync" type="checkbox" name="autosync" checked>
     <span class="checkmark"></span>
   </label>
 
-  <input type="button" onclick="loadDataFromDevice()" value="Sync with device" checked>
+  <input type="button" onclick="loadDataFromDevice()" value="Sync with device" title="Click to retreive settings from the device">
+
+  <input type="button" onclick="clickCommandLink('/1__setTestMode-1')" value="Test mode" title="Click to enter Test Mode">
 
   <div class="invisible">
     <a href="#" id="commandLink">Command Link</a>
